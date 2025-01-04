@@ -263,3 +263,60 @@ Which is very similar to the drawing for platforms.
 
 Finally, the collision with the player, for now, if the player touches the enemy, the game just quits.
 
+> Start with the [basic setup](https://github.com/Jamster3000/The-Coding-Corner-Tutorials/blob/main/Python/Pygame/gif-animation-death.py) file.
+
+# GIF based death animation
+Games don't normally use GIF images as animation, but for this, GIF's are easy to use, impliment and get hold of to start with, so we'll keep things simple.
+
+For this next part, you will need to `pip` install PIL (aka pillow) which is a library used for processing and managing images. Pygame doesn't support the use of GIF's so we're going to have to convert the GIF into many many sperate images.
+
+## what are used for animations if not GIF?
+There are typically two ways of animating 2D games
+
+- Iterate over a list of images, each one being a frame, when played together in fast succession, it plays an animation, very similar to how stop motion animation works.
+- There is an alternitive which is considered the most effecient, and that is called a sprite sheet. A sprite sheet is simpily a large image containing every single frame of a sprite, then using maths to tell it to move from part of that loaded image to another - this is trickier and more complex so we won't focus on that for now.
+
+# player class
+More settings and variables now for the player, ou can see that the images of the player are still handled the exact same.
+
+- We keep track of the index frame (e.g., the number frame we're on)
+- a bool to check if the animation has finished
+- A delay to pause on each frame for miliseconds
+- then the actual delay
+
+# load GIF
+All this does is load the GIF image, and continues to loop through each frame of it, appending each frame to the frames list, then return it.
+
+# Other changes
+- The apply_gravity changes as if the player is dead, there is no need to apply gravity exactly the same for the handle_input too.
+
+```python
+if self.state == "dead" and not self.dead_animation_done:
+            current_time = pygame.time.get_ticks()
+
+            # Only switch to the next frame if the frame_delay has passed
+            if current_time - self.last_frame_time > self.frame_delay:
+                self.dead_frame_index += 1
+                self.last_frame_time = current_time  # Reset the frame time
+
+                if self.dead_frame_index >= len(self.image_dead_frames):
+                    self.dead_frame_index = len(self.image_dead_frames) - 1  # Stay on last frame
+                    self.dead_animation_done = True  # Animation is finished
+            return  # Don't update other player logic if dead
+````
+
+Here, in the player updated method, this is where each frame is updated and changed for the next.
+
+
+
+
+# So, what's next?
+You could create your own platformer, try to replicate Super Mario, or something more.
+
+- Change the enemies, platforms, and even the background to images rather than regular rectangles.
+- Add some life to the enemies to make it more complex and harder to play the game
+- add a menu screen and game over screen.
+- Kill the player off if they fall off a platform
+
+
+Your imagination is the only limit. You can ask anyone you wish to for help if you do follow this tutorial.
