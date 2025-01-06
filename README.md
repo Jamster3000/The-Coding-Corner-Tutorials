@@ -13,6 +13,4 @@ If you see any mistakes with the tutorials feel free to inform myself or the adm
 
 ---
 
-<iframe src="https://discord.com/widget?id=1310210357503066205&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-
 Not already part of `The Coding Corner`? Want to support the server, why not [join](https://discord.gg/mc5gBvhmdW)
