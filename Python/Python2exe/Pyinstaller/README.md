@@ -70,3 +70,11 @@ You have to have `upx` installed before using this, it's a seperate thing.
 - `--name` - allows you to specify a name for the .exe
 
 There are more, but these are the usful ones that you would likely require or want to use.
+
+
+
+## pyinstaller with tkinter
+Pyinstaller should work out the box with tkinter (third party tkinter libraries, such as customtkinter requires the use of hidden-import flag)
+
+Running
+`pyinstaller simple_gui` works well with tkinter without the requirement of any other commands

@@ -1,72 +1,40 @@
-This tutorial will go through the basics of converting python code into an exe, which can run on any windows machine without the need for python to be installed - using Pyinstaller library.
+This tutorial will cover the following tools/libraries to transform your python code into a runable exe program for any windows system with or without python installed.
 
-> See the shop.py file that goes with this tutorial
+__                                                     __
+- **Pyinstaller**
+- **CX_Freeze**
+- **Nuitka**
+- **py2exe**
+- **pyoxidizer**
+__                                                     __
+Click on any the links above to go straight to the section to include that library/tool
 
-# How exactly does this work
-Python code, when executed converts to `bytecode` 
-The obvious issue here is that `.exe` window excutables is made of machine code, not bytecode - bytecode "can" be converted to machine code, but it's incredibly complex and introduces unreliability of the code.
-
-> Neither bytecode or machine code is human readable, it's not something someone typically can understand or write.
-
-**This is what the pyinstaller library does** rather than converting the bytecode into machine code > instead it just combines the python intepreter into the exe, that way python is**theoretically** on any windows machine you have the python exe on.
-
-Here is some prewritten code a very simple terminal text based shopping application.
-
-> make sure to run this code yourself before hand to ensure it works as expected.
-
-This works better if you are able to run it in the termianl instead of an interpreter - but nonetheless should still work as expected.
-
-# install pyinstaller
-1. Open a termainl/command prompt
-2. Run the command `pip install pyinstaller` (this might be slightly different on your machine or you might want a virtual environment first).
-
-# running pyinstaller
-In a terminal that can access the python code, run
-`pyinstaller [filename.py]`
-Depending on your device's performance, this could take several mintues.
-
-__                                                                                                                                                __
-
-Once the command finished running, you'll notice 1 file and two folders that have been generated from this.
-
-- **.spec** file - This is a configuration file, you shouldn't have to worry too much about this > this is normally modified in the pyinstaller command rather than the file.
-- **build** - This is where all the temp files, logs and reports are stored > once the pyinstaller command has finished, you can safetly remove this folder.
-- **dist** - this contains the actual standalone excutable file.
-
-As mentioned, the runnable execution lives in the **dist folder** any other files that are here in this folder are also required to be in the same folder as the `.exe` > there might be a **_internal** folder this contains things that is strictly required for the exe to work.
+> NOTE: This tutorial assumes that you're developing on windows.
 
 
 
+# Breakdown of the packaging tools
+## Pyinstaller
+Most popular tool for creating standalone executables from python for windows, linux, and macOS. This is beginner-friendly! This works well for most applications but can lead to larger executable sizes which then affects it's performance.
+**Difficulty**: Easy to moderate, depending on the complexity of the program.
+**Best for**: quick packaging/testing, ease of use.
 
-.
+## CX_Freeze
+Similar tool for pyinstaller but it's more supported with python 3.x. it's lightweight and supports windows, macOS, and linux. This offers more control over packaging and customization compared to Pyinstaller but erquires more configuration.
+**Difficulty**: Moderate, requires some configuration
+**Best for**: those that need more control over packaging.
 
+## Nuitka
+Converts python code into C and then compiles it into an exe. THis results in faster execution and a smaller executables than other options. It offers a performance boost, especially for computationally intensive applications. Alos has great support for external libraries.
+**Difficulty**: Easy to moderate.
+**Best for**: Performance-focused applications.
 
+## Py2exe
+A tool that converts python code to windows exe files, only supports windows. It's been around for a long time and is limited compared to other options.
+**Difficult**: Easy to use,.
+**Best for**: Windows only applications where only simplicity is key.
 
-# Pyinstaller flags
-There are flags (normally extra arguments in a command that often start with `--`) that can be added to your pyinstaller command in the terminal, below is a list of the most usful ones you may want to try out yourself.
-
-- `--onefile` - bundles all the files and resources needed for the exe into one exe, meaning the dist would contain an exe and nothing else.
-> This will make the exe larger, and potentally slower.
-
-- `--noconsole` - This hides the terminal/console in the background so it can't be seen, this is most ideal for GUI applications where you don't need to see the terminal open up.
-
-- `--windowed` - this is the same as `--noconsole` except just more explicit. 
-
-- `--add-data` - This allows you to explicitly mention other files and resources that the code requires, such as data, images, etc. `pyinstaller --add-data "data/config.txt:config" script.py` for example. You can mention multiple `--add-data` flags in the command.
-
-- `--icon` - used to specify the icon used for the executable, this is common as all exe's have an icon. For this to work you will need an `.ico` file.
-
-- `--clean` - This cleans up anything that is already in the build folder.
-
-- `--debug=all` - This is for testing, it allows you to see logs of warnings and errors.
-
-- `--strip` - this removes unnecessary  symbols and data from the metadata in an attempt to decrease the size of the final .exe file.
-
-- `--upx` (Ultimate Packaging eXecutable) - This can reduce the final size of the exe by further compressing it - Depending on the code that's being converted this can sometimes make the exe slower - more effective for large .exe's 
-You have to have `upx` installed before using this, it's a seperate thing.
-
-- `--no-upx` - obvious the oposite of using upx
-
-- `--name` - allows you to specify a name for the .exe
-
-There are more, but these are the usful ones that you would likely require or want to use.
+## Pyoxidizer
+This is a newer tool using rust language to create the standalone executable. It offers good performance and smaller file sizes. It's especially well-suited for a modern packaging needs but has a large steeper learning curve due to it's unique approach to python to exe and it's use of rust. Tutorial doesn't cover GUI with this.
+**Difficulty** Hard+ due to using rust and very little documentation for it.
+**Best for**: Advanced users looking for a small, efficient executables, and those that are familiar enough with rust.

@@ -66,3 +66,9 @@ setup(
 ```
 
 From this, you can see it's compressed and bundled but when you try doing this, you'll notice that there's still some external files, which is how py2exe works.
+
+
+## py2exe with tkinter
+This should work outside the box with tkinter too for as long as you don't "exclude" the tkinter library from the setup.
+
+For tkinter applications, follow the above tutorial for py2exe as it works exactly the same for tkinter too

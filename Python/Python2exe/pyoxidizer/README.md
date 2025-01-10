@@ -77,3 +77,12 @@ This will take several mintues, but once done, you have a fully working exe in t
 
 ## MSI installer
 Although it's not built in, it has support to use WIX Toolset to generate an installer.
+
+
+## Pyoxidizer with Tkinter
+This is where things get complicated. 
+pyoxidizer doesn't work with tkinter out of the box, which means it requires some different commands in the config.
+
+There is little to no resources online to answer this, the obvious solution in the config file just doesn't work as expected. So after 5+ hours of trying to figure it out, I've just figured that it's either not possible or incredibly complex.
+
+Therefore this is the only presented tutorial of py to exe that I can't give any guidance on for Tkinter.

@@ -145,3 +145,8 @@ setup(
 ```
 
 You should be able to get the just of this with reading the comments.
+
+
+## CX_freeze with Tkinter
+CX_freeze also works out of the box with tkinter
+For as long as you don't exclude tkinter, the above should still apply and work as intended for GUI tkinter
