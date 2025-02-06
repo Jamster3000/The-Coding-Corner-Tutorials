@@ -490,7 +490,7 @@ if our CSS was
     font-size: 24px;
 }
 ```
-It would apply the font-size and color to <h1>, <h2>, <h3> and so on because they are all inside that div with the class called "logo". The colours okay, but the font-size isn't, <h5> is much smaller than <h1> so we can't have them the same font size.
+It would apply the font-size and color to <h1>, <h2>, <h3> and so on because they are all inside that div with the class called "logo". The colours okay, but the font-size isn't, <h5> is much smaller than \<h1>\ so we can't have them the same font size.
 
 That's where
 ```css
