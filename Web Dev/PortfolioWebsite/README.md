@@ -499,8 +499,7 @@ That's where
     font-size: 24px;
 }
 ```
-comes in. First part you're telling it to apply the colour and font size to the .logo class, then this CSS is only applied to the elements inside the /<div> if that element is /<h1>.
-
+comes in. First part you're telling it to apply the colour and font size to the .logo class, then this CSS is only applied to the elements inside the \<div> if that element is \<h1>.
 
 ```css
 nav ul {
