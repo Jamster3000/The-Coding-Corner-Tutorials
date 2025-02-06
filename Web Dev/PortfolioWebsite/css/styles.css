@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #333;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f4f4f4;
+}
+
+.logo h1 {
+    color: #f4f4f4;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f4f4f4;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #007bff;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+section p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+section a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+section a:hover {
+    color: #2980b9;
+}
+
+#portfolio ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+#portfolio li {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+#portfolio li:hover {
+    transform: translateY(-5px);
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#contact p {
+    font-size: 1.2em;
+}
