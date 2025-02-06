@@ -490,7 +490,7 @@ if our CSS was
     font-size: 24px;
 }
 ```
-It would apply the font-size and color to <h1>, <h2>, <h3> and so on because they are all inside that div with the class called "logo". The colours okay, but the font-size isn't, <h5> is much smaller than \<h1>\ so we can't have them the same font size.
+It would apply the font-size and color to \<h1>, \<h2>, \<h3> and so on because they are all inside that div with the class called "logo". The colours okay, but the font-size isn't, \<h5> is much smaller than \<h1> so we can't have them the same font size.
 
 That's where
 ```css
@@ -499,7 +499,7 @@ That's where
     font-size: 24px;
 }
 ```
-comes in. First part you're telling it to apply the colour and font size to the .logo class, then this CSS is only applied to the elements inside the <div> if that element is <h1>.
+comes in. First part you're telling it to apply the colour and font size to the .logo class, then this CSS is only applied to the elements inside the /<div> if that element is /<h1>.
 
 
 ```css
@@ -526,7 +526,7 @@ This is called "descendant selector" because it decends downwards from the paren
 `Navigation` > `List` > `List item` > `Hyper link`
 
 - list-style - we're just making sure it doesn't render bullet points, numbers, or any other sort of points from a list.
-- gap - This sets the space between rows and columns, e.g., the space between each <a> in the list.
+- gap - This sets the space between rows and columns, e.g., the space between each /<a> in the list.
 - text-decoration - Sometimes you'll see a link to click on and it has the little horizontal underline going underneath, setting text-decoration to none will remove that line.
 - padding - the first number is top and bottom padding, the second is left and right padding.
 - a:hover - You'll see this, which changes the colour on hover. This ":hover" is known as 
